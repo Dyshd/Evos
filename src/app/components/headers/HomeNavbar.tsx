@@ -1,0 +1,167 @@
+import { useEffect, useState } from "react";
+import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import Basket from "./Basket";
+import { CartItem } from "../../../lib/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
+import { serverApi } from "../../../lib/config";
+import { Logout } from "@mui/icons-material";
+
+interface HomeNavbarProps {
+  cartItems: CartItem[];
+  onAdd: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+  onDelete: (item: CartItem) => void;
+  onDeleteAll: () => void;
+  setSignupOpen: (isOpen: boolean) => void;
+  setLoginOpen: (isOpen: boolean) => void;
+  handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
+  anchorEl: HTMLElement | null;
+  handleCloseLogout: () => void;
+  handleLoginRequest: () => void
+}
+
+export default function HomeNavbar(props: HomeNavbarProps) {
+  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll, setLoginOpen, setSignupOpen, handleLogoutClick, handleCloseLogout, handleLoginRequest, anchorEl } = props;
+  // const { authMember ,setAuthMember, orderBuilder, setOrderBuilder} = useGlobals();
+  const { authMember } = useGlobals();
+  // HENLERS
+  return (
+    <div className="home-navbar">
+      <Container className="navbar-container">
+        <Stack className="menu">
+          <Box>
+            <NavLink to="/">
+              <img className="brand-logo" src="/img/evoss.png" />
+            </NavLink>
+          </Box>
+          <Stack className="links">
+            <Box className="hover-line">
+              <NavLink to="/" activeClassName={"underline"}>
+                Bosh Sahifa
+              </NavLink>
+            </Box>
+            <Box className={"hover-line"}>
+              <NavLink to="/products">Mahsulot
+              </NavLink>
+            </Box>
+
+            {authMember ? (
+              <Box className={"hover-line"}>
+                <NavLink to="/orders" activeClassName={"underline"}>
+                  Buyurtma
+                </NavLink>
+              </Box>
+            ) : null}
+
+            {authMember ? (
+              <Box className={"hover-line"}>
+                <NavLink to="/member-page" activeClassName={"underline"}>
+                  Mening Sahifam
+                </NavLink>
+              </Box>
+            ) : null}
+            <Box className={"hover-line"}>
+              <NavLink to="/help" activeClassName={"underline"}>
+                Yordam
+              </NavLink>
+            </Box>
+            <div style={{ background: "#343434" , borderRadius: "10px"}}>
+              <Basket
+                cartItems={cartItems}
+                onAdd={onAdd}
+                onRemove={onRemove}
+                onDelete={onDelete}
+                onDeleteAll={onDeleteAll}
+              />
+            </div>
+
+
+            {!authMember ? (
+              <Box>
+                <Button variant="contained" className="login-button" onClick={() => setLoginOpen(true)}>
+                  Login
+                </Button>
+              </Box>
+            ) : (
+              <img
+                className="user"
+                src={authMember?.memberImage ? `${serverApi}/${authMember?.memberImage}` : "/icons/default-user.svg"}
+                aria-haspopup={"true"}
+                onClick={handleLogoutClick}
+              />
+            )}
+
+            <Menu
+              anchorEl={anchorEl}
+              id="account-menu"
+              open={Boolean(anchorEl)}
+              onClose={handleCloseLogout}
+              onClick={handleCloseLogout}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: 'visible',
+                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                  mt: 1.5,
+                  '& .MuiAvatar-root': {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                  },
+                  '&:before': {
+                    content: '""',
+                    display: 'block',
+                    position: 'absolute',
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: 'background.paper',
+                    transform: 'translateY(-50%) rotate(45deg)',
+                    zIndex: 0,
+                  },
+                },
+              }}
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+            >
+              <MenuItem onClick={handleLoginRequest}>
+                <ListItemIcon>
+                  <Logout fontSize="small" style={{ color: 'blue' }} />
+                </ListItemIcon>
+                Logout
+              </MenuItem>
+            </Menu>
+
+
+          </Stack>
+        </Stack>
+        <Stack className={"header-frame"}>
+          <Stack className={"detail"}>
+            <Box className={"head-main-txt"}>
+              Table Service yangi xizmati: Sizning qulayligingiz - bizning ustuvor vazifamiz!
+            </Box>
+            <div className="head-sharh">Har oyda <span>200K+</span>ijobiy sharhlar</div>
+            <Box className={"service-txt"}>Sizga maksimal qulaylik va g‘amxo‘rlik qilish uchun yaratilgan yangi innovatsion vosita bo‘lgan Table Service xizmatini taqdim etishdan mamnunmiz. Endi bizning restoranlarimizga tashrif buyurganingizda, buyurtmani kutib o‘tirishingiz shart emas - biz vaqtingizdan zavqlanishingiz uchun hamma narsani qilamiz!</Box>
+            <Box className={"signup"}>
+              {!authMember ? (
+                <Button
+                  variant={"contained"}
+                  className={"signup-button"}
+                  onClick={() => setSignupOpen(true)}
+                >
+                  SIGN UP
+                </Button>
+              ) : null}
+            </Box>
+          </Stack>
+          <Stack className={"logo-frame"}>
+            <div className={"logo-img"}></div>
+          </Stack>
+        </Stack>
+      </Container>
+    </div>
+  );
+}

@@ -1,0 +1,580 @@
+.products-page {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #f8f8ff;
+}
+
+/** Products **/
+
+.products-page .products {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: #f8f8ff;
+  flex-direction: column;
+}
+
+.products-page .products .avatar-big-box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-page .products .avatar-big-box .top-content {
+  position: relative;
+  width: 100%;
+  height: 43px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.products-page .products .avatar-big-box .top-content .text {
+  color: #343434;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.products-page .products .avatar-big-box .search-container {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 28.541px;
+  flex-shrink: 0;
+  border-radius: 18.5px;
+  border: 1px solid #fff;
+  background: #fffcfc;
+  box-shadow: 0px 4px 4px 0px rgba(212, 212, 212, 0.25);
+  margin-left: 126px;
+}
+.products-page .products .avatar-big-box .search-container .search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.products-page .products .avatar-big-box .search-container .search-button {
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 106px;
+  height: 36px;
+  flex-shrink: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d7b586;
+  font-family: "Quicksand";
+  border: none;
+  border-radius: 18.5px;
+  background: #343434;
+  cursor: pointer;
+}
+.products-page .products .dishes-filter-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-page .products .dishes-filter-section .dishes-filter-box {
+  margin-top: 45px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 180px;
+}
+
+.products-page .products .dishes-filter-section .dishes-filter-box .order {
+  width: 70px;
+  height: 36.5px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 20px;
+}
+
+.products-page .products .list-category-section {
+  margin: 40px 0 14px 0;
+  position: relative;
+  /* width: 100%; */
+  margin-right: 1330px;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: absolute;
+  z-index: 9999;
+  top: 150px;
+}
+.list-category-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative; /* joyidan siljimaydi */
+  z-index: 10; /* boshqa bloklar ustida turishi uchun */
+}
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px;
+  min-height: 400px; /* product bo‘lmasa ham joy bo‘sh qoladi */
+  align-items: flex-start;
+}
+
+.products-page .products .list-category-section .product-category {
+  position: relative;
+  display: flex;
+  flex-direction: row; /* ← gorizontal */
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin-top: -25px;
+}
+
+.products-page
+  .products
+  .list-category-section
+  .product-category
+  .category-main {
+  display: flex;
+  flex-direction: row; /* ← vertical emas, horizontal */
+  align-items: center;
+  gap: 15px; /* buttonlar orasini ochadi */
+  margin-left: 960px;
+  margin-top: 0;
+}
+
+.products-page
+  .products
+  .list-category-section
+  .product-category
+  .category-main
+  button {
+  gap: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  /* transform: rotate(0deg);   ← endi aylantirish shart emas */
+  margin-top: 0;
+}
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Har qator 4 ta ustun */
+  gap: 20px; /* Kartalar orasidagi masofa */
+  padding: 20px;
+}
+
+.product-card {
+  border-radius: 8px;
+  width: 273px;
+  height: 320px;
+  position: relative !important;
+  z-index: 9999999;
+}
+/* *  uzgartirgan joyim*
+.products-page .products .product-card .product-img {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 0px 50px 0px 0px;
+  position: relative;
+}
+
+.products-page .products .product-card .product-img:before{
+  border-radius: 0px 50px 0px 0px;
+  content: "";
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.products-page .products .product-card .product-img:hover::before {
+  opacity: 1;
+  border-radius: 0px 50px 0px 0px;
+}
+ 
+.products-page .products .product-card .product-img img {
+  position: absolute;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+}
+.products-page .products .product-card .product-img .shop-btn{
+  position: absolute;
+  padding: 20px;
+  top: 217px;
+  width: 64px;
+
+
+}
+
+.products-page .products .product-card .product-img:hover .shop-btn {
+  opacity: 1;
+}
+
+.products-page .products .product-img:hover .view-btn {
+  opacity: 1;
+} */
+.product-card .product-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0); /* нет затемнения по умолчанию */
+  transition: background-color 0.3s ease;
+  border-radius: 0px 50px 0px 0px;
+  cursor: pointer;
+}
+.product-card .product-img:hover::after {
+  background-color: rgba(0, 0, 0, 0.4); /* затемнение при hover */
+}
+.product-card .product-img:hover .shop-btn {
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  background: rgba(187, 47, 200, 0.78) !important;
+}
+.product-card .product-sale {
+  position: absolute;
+  z-index: 99999999;
+  background-color: #f19737;
+  border-radius: 20px;
+  padding: 5px;
+  color: white;
+  margin-top: 8px;
+}
+.product-title {
+  color: #343434;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.product-desc {
+  color: #10631f;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* imglardi widht */
+.review-box {
+  width: 258.78px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #0d1518;
+  box-shadow: 0px 0px 22px 0px #e4d4d4;
+}
+.category-title {
+  color: #e3c08d;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+.review-box img {
+  width: 100%;
+  height: 100%;
+}
+.barands-logo {
+  background: #0d1518;
+  height: 630px;
+  flex-shrink: 0;
+  padding-top: 40px;
+  margin-top: 67px;
+}
+
+/* address title */
+.address-are .title {
+  margin-top: 47px;
+  text-align: center;
+  color: #343434;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/** ChosenProduct **/
+
+.products-page .chosen-product {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #f8f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-page .chosen-product .product-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+
+.products-page .chosen-product .chosen-product-slider {
+  width: 48%;
+  height: 480px;
+  background: #ffffff;
+  box-shadow: 9px 13px 14px 5px rgba(0, 0, 0, 0.25),
+    inset -1px 2px 10px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.products-page .chosen-product .chosen-product-slider .swiper-area {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  width: 100%;
+  height: 1020px;
+}
+
+.products-page
+  .chosen-product
+  .chosen-product-slider
+  .swiper-area
+  .slider-image {
+  width: 100%;
+  height: 100%;
+}
+
+.products-page .chosen-product .chosen-product-info {
+  padding: 30px 40px;
+  width: 49%;
+  height: 480px;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 9px 13px 14px 5px rgba(0, 0, 0, 0.25),
+    inset -1px 2px 10px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.products-page .chosen-product .chosen-product-info .info-box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.products-page .chosen-product .info-box .product-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.products-page .chosen-product .info-box .resto-name {
+  margin-top: 16px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 15px;
+  color: #979797;
+}
+
+.products-page .chosen-product .info-box .rating-box {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products-page .chosen-product .rating-box .star-box {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.products-page .chosen-product .rating-box .evaluation-box {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.products-page .chosen-product .rating-box .evaluation-box .product-view {
+  display: flex;
+  align-items: center;
+}
+
+.products-page .chosen-product .info-box .product-desc {
+  height: 112px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.products-page .chosen-product .info-box .product-price {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products-page .chosen-product .product-price span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.products-page .chosen-product .button-box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-page .chosen-product .button-box button {
+  width: 230px;
+  height: 44px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #f8f8ff;
+}
+
+.products-page .chosen-product .title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  margin-top: 40px;
+}
+
+.shop-btn {
+  position: absolute;
+  z-index: 10; /* rasm ustida ko‘rinishi uchun */
+}
+
+
+
+.question {
+  width: 100%;
+  text-align: center;
+}
+
+.catolog-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding: 0 40px;
+}
+
+/* CARD STYLE */
+.catolog {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+/* HOVER STYLE */
+.catolog:hover {
+  background: #e8f9ef;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 128, 0, 0.2);
+}
+
+/* TEXT ANIMATION */
+.catolog h1,
+.catolog .text {
+  transition: color 0.3s ease;
+}
+
+.catolog:hover h1,
+.catolog:hover .text {
+  color: #145a32;
+}
+
+/* RESPONSIVE PHONE */
+@media (max-width: 900px) {
+  .catolog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .catolog-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+

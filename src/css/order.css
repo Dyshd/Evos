@@ -1,0 +1,259 @@
+/* ===== GLOBAL ===== */
+.order-page {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background: #f3f7f4;
+  font-family: 'Inter', sans-serif;
+}
+
+.order-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  gap: 30px;
+}
+
+/* LEFT SIDE */
+.order-left {
+  flex: 2;
+}
+
+/* RIGHT SIDE */
+.order-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ===== TABS (EVOS GREEN STYLE) ===== */
+.order-nav-frame {
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 163, 108, 0.12);
+}
+
+.table-list .MuiTab-root {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: #007f57 !important;
+}
+
+.table-list .Mui-selected {
+  color: #00a36c !important;
+}
+
+.MuiTabs-indicator {
+  background-color: #00a36c !important;
+  height: 4px !important;
+  border-radius: 4px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-main-box {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.25s ease;
+}
+
+.order-main-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,163,108,0.18);
+}
+
+/* Scroll list */
+.order-box-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* PRODUCT ROW */
+.orders-name-price {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #e4e4e4;
+  transition: 0.2s;
+}
+
+.orders-name-price:hover {
+  background: #ecfff7;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+/* IMAGE */
+.order-dish-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-right: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Product name */
+.title-dish {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Price block */
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-box p {
+  font-weight: 600;
+  color: #00a36c;
+}
+
+/* ===== TOTAL PRICE BOX ===== */
+.total-price-box {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-total {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 3px;
+  color: #036a4a;
+}
+
+/* ===== BUTTONS ===== */
+.pay-button {
+  background: #00a36c !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 10px 25px !important;
+  border-radius: 12px !important;
+  transition: 0.2s;
+}
+
+.pay-button:hover {
+  background: #007f57 !important;
+  transform: scale(1.05);
+}
+
+.cencel-button {
+  background: #ff3e3e !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+}
+
+.verify-button {
+  background: #ffa200 !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+}
+
+/* ===== USER CARD ===== */
+.order-info-box {
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,163,108,0.15);
+}
+
+.order-user-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00a36c;
+  margin-top: 10px;
+}
+
+.order-user-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.order-user-prof {
+  color: #777;
+  margin-top: 5px;
+}
+
+.liner {
+  height: 1px;
+  background: #e1e1e1;
+  margin: 20px 0;
+}
+
+/* LOCATION */
+.user-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #036a4a;
+}
+
+/* ===== PAYMENT BOX ===== */
+.payment-info-box {
+  padding: 25px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,163,108,0.15);
+}
+
+.card-number,
+.client-name,
+.card-detail-date,
+.card-detail-cvv {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #d3d3d3;
+  background: #f9f9f9;
+  transition: 0.25s;
+}
+
+.card-number:focus,
+.client-name:focus,
+.card-detail-date:focus,
+.card-detail-cvv:focus {
+  border-color: #00a36c;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,163,108,0.25);
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Payment cards line */
+.cards {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.cards img {
+  width: 55px;
+  transition: 0.2s;
+}
+
+.cards img:hover {
+  transform: translateY(-4px);
+}

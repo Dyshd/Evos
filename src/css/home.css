@@ -1,0 +1,561 @@
+.homepage {
+  width: 100%;
+  height: auto;
+}
+/** Statistics **/
+
+.homepage .static-frame {
+  margin-top: -218px;
+  width: 100%;
+  height: 236px;
+  background-color: #343434;
+}
+
+.homepage .static-frame .info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .static-frame .info .static-box {
+  width: 200px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .static-frame .info .static-box .static-num {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 80px;
+  color: #d7b686;
+}
+
+.homepage .static-frame .info .static-box .static-text {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  color: #d7b586;
+}
+
+/** Popular Dishes **/
+.homepage .popular-dishes-frame {
+  width: 100%;
+  height: 580px;
+  display: flex;
+  background: #f8f8ff;
+}
+
+.homepage .popular-dishes-frame .popular-section {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .popular-dishes-frame .popular-section .category-title {
+  text-align: center;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
+}
+
+/* ✅ SWIPER uchun moslangan — faqat shu o‘zgardi */
+.homepage .popular-dishes-frame .popular-section .cards-frame {
+  width: 100%;
+  margin-top: 43px;
+  display: block; /* 🔥 flexni o‘chirildi, Swiper o‘zi boshqaradi */
+}
+
+.homepage .popular-dishes-frame .popular-section .cards-frame .card {
+  min-height: 430px;
+  min-width: 300px;
+  cursor: pointer;
+}
+
+/* .homepage
+  .popular-dishes-frame
+  .popular-section
+  .cards-frame
+  .card
+  .card-cover {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0) 200px
+  );
+} */
+
+.homepage .popular-dishes-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+
+/** NEW PRODUCTS **/
+
+.homepage .new-products-frame {
+  width: 100%;
+  height: 605px;
+  background: #f8f8ff;
+  display: flex;
+}
+
+.homepage .main {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .new-products-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  margin-top: 50px;
+  color: #000;
+}
+
+/* .homepage .new-products-frame .main .cards-frame {
+  width: 100%;
+  margin: 47px 2px 2px 2px;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+.homepage .new-products-frame .main .card-frame {
+  width: 100%;
+  margin: 47px 2px 2px 2px;
+  display: flex;
+  flex-direction: row; /* Tezasi yonma-yon bo'ladi */
+  /* justify-content: space-between; */
+  flex-wrap: wrap; /* Agar joy yetmasa, pastga tushadi */
+  gap: 20px; /* Orasiga masofa */
+}
+
+.homepage .new-products-frame .main .card {
+  height: 335px;
+  width: 290px;
+  cursor: pointer;
+}
+
+.homepage .new-products-frame .products-sale {
+  position: absolute;
+  margin-top: 10px;
+  z-index: 100;
+  width: 90px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff9200;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 21px;
+  color: #f8f8ff;
+}
+
+.homepage .new-products-frame .products-detail {
+  width: auto;
+  height: 49%;
+  display: flex;
+  justify-content: center;
+  margin-top: -12px;
+  border-top: 1px solid;
+  border-color: #f8f8ff;
+  background-color: #fafbfb;
+}
+
+/* INFO BLOCK */
+.homepage .new-products-frame .products-detail .info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE (title + price) */
+.homepage .new-products-frame .products-detail .left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* PRODUCT NAME */
+.homepage .new-products-frame .products-detail .title {
+  font-weight: 600;
+  max-width: 130px; /* nom juda uzun bo'lsa ... qiladi */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* DIVIDER */
+.homepage .new-products-frame .products-detail .divider {
+  width: 2px;
+  height: 20px;
+  background: #d9d9d9;
+  margin: 0 4px;
+  border-radius: 2px;
+}
+
+/* PRICE */
+.homepage .new-products-frame .products-detail .price {
+  font-weight: 600;
+  white-space: nowrap;
+  color: #2e7d32; /* pul uchun yoqimli yashil rang */
+}
+
+/* VIEWS */
+.homepage .new-products-frame .products-detail .views {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 4px;
+  opacity: 0.7; /* biroz nozikroq bo'lib turadi */
+}
+
+.homepage .new-products-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+.homepage .new-products-frame .product-sale {
+  position: absolute;
+  z-index: 99999999;
+  background-color: #f19737;
+  border-radius: 20px;
+  padding: 5px;
+  color: white;
+  margin-top: 8px;
+}
+
+/** ADVERTISEMENT **/
+.homepage .ads-restaurant-frame {
+  width: 100%;
+  height: 693px;
+  display: flex;
+  overflow: hidden;
+  transform: none !important;
+  box-shadow: -3px 0px 20px 14px #34343480;
+}
+.homepage .ads-restaurant-frame .ads-video {
+  width: 100%;
+  background: #0c0c12;
+  display: flex;
+  box-shadow: 0px -8px 90px rgb(215, 215, 255);
+  /* transform: scale(1.5); */
+  /* overflow: hidden; */
+}
+
+/** ACTIVE USERS **/
+
+.homepage .active-user-frame {
+  width: 100%;
+  height: 605px;
+  background: #f8f8ff;
+  display: flex;
+}
+
+.homepage .active-user-frame .main {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .active-user-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  color: #000;
+}
+
+.active-user-frame .cards-frame {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.homepage .active-user-frame .card {
+  height: 335px;
+  width: 290px;
+  cursor: pointer;
+}
+
+.homepage .active-user-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+.homepage .active-user-frame .title {
+  margin-left: 100px !important;
+}
+
+/** EVENTS **/
+
+.homepage .events-frame {
+  width: 100%;
+  height: 745px;
+  background: #f8f8ff;
+  display: flex;
+}
+
+.homepage .events-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  /* padding-top: 20px; */
+}
+
+.homepage .events-frame .events-main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .events-frame .events-main .events-text {
+  width: auto;
+  height: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .events-frame .events-main .prev-next-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin: 40px 0 40px 0;
+  height: 25px;
+}
+
+.homepage .events-frame .dot-frame-pagination {
+  position: relative;
+  width: auto;
+  display: flex;
+}
+
+.homepage .events-frame .events-main .events-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .events-frame .events-info .events-info-frame {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .events-frame .events-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.homepage .events-frame .events-desc {
+  position: absolute;
+  margin-bottom: 7px;
+  padding: 10px;
+  display: flex;
+  width: 90%;
+  height: auto;
+  bottom: 5px;
+  background: #f8f8ff;
+  box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+  border-radius: 8px;
+}
+
+.homepage .events-frame .events-desc .events-bott {
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .events-frame .events-desc .events-bott .bott-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage .events-frame .bott-left .event-title-speaker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.homepage .events-frame .event-organizator .spec-text-author {
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  line-height: 34px;
+  color: #140342;
+}
+
+.homepage .events-frame .bott-left .text-desc {
+  margin-top: 10px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #4f547b;
+}
+
+.homepage .events-frame .bott-left .bott-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  height: 16px;
+}
+
+.homepage .events-frame .bott-info .bott-info-main {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: auto;
+  height: 100%;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4f547b;
+}
+
+.homepage .events-frame .bott-info .bott-info-main img {
+  margin-right: 10px;
+}
+
+.homepage .events-frame .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.homepage .events-frame .swiper-pagination-bullet {
+  margin-right: 5px;
+  width: 8px;
+  height: 8px;
+  text-align: center;
+  opacity: 1;
+  background: #f8f8ff;
+  border-radius: 50%;
+}
+
+.homepage .events-frame .swiper-pagination-bullet-active {
+  background: #343434;
+  border-radius: 50%;
+}
+
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden; /* 👈 rasm tashqariga chiqmaydi */
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  transition: transform 0.3s ease;
+  display: block; /* tasvir block bo‘lsin */
+  width: 100%; /* kartochkani to‘liq qoplashi uchun */
+  height: 100%;
+  object-fit: cover; /* tasvir qirqilsa ham mutanosib bo‘lsin */
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
