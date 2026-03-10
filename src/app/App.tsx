@@ -27,7 +27,7 @@ function App() {
   const { setAuthMember } = useGlobals();
 
   // FACE ID HOLATLARI
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(true);
   const [faceIdBypassed, setFaceIdBypassed] = useState(false);
 
   const [signupOpen, setSignupOpen] = useState(false);
@@ -50,7 +50,7 @@ function App() {
   if (!isAuthorized && !faceIdBypassed) {
     return (
       <>
-        <FaceControlGate onAccessGranted={() => setIsAuthorized(true)} />
+        {/* <FaceControlGate onAccessGranted={() => setIsAuthorized(true)} /> */}
         <button
           onClick={() => {
             setFaceIdBypassed(true);

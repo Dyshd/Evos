@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Tizimni yoqish/o'chirish uchun global sozlama (ixtiyoriy)
-export const USE_BIOMETRIC_LOCK = true;
+export const USE_BIOMETRIC_LOCK = false;
 
 export default function FaceControlGate({ onAccessGranted }: { onAccessGranted: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
