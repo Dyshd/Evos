@@ -206,7 +206,7 @@ export default function PopularDishes() {
     <div className="popular-dishes-frame">
       <Container>
         <Stack className="popular-section">
-          <Box className="category-title">Popular Dishes</Box>
+          <Box className="category-title">Ommabop taomlar</Box>
 
           <div className="cards-frame">
             {fixedSlides.length > 0 ? (
