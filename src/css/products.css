@@ -16,6 +16,7 @@
 }
 
 .products-page .products .avatar-big-box {
+  margin-top: 100px;
   position: relative;
   width: 100%;
   height: auto;
@@ -168,7 +169,7 @@
   align-items: center;
   gap: 15px; /* buttonlar orasini ochadi */
   margin-left: 960px;
-  margin-top: 0;
+  margin-top: 100;
 }
 
 .products-page
@@ -367,7 +368,8 @@
   width: 48%;
   height: 480px;
   background: #ffffff;
-  box-shadow: 9px 13px 14px 5px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    9px 13px 14px 5px rgba(0, 0, 0, 0.25),
     inset -1px 2px 10px 3px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   overflow: hidden;
@@ -395,7 +397,8 @@
   height: 480px;
   display: flex;
   background: #ffffff;
-  box-shadow: 9px 13px 14px 5px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    9px 13px 14px 5px rgba(0, 0, 0, 0.25),
     inset -1px 2px 10px 3px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
 }
@@ -522,8 +525,6 @@
   z-index: 10; /* rasm ustida ko‘rinishi uchun */
 }
 
-
-
 .question {
   width: 100%;
   text-align: center;
@@ -544,7 +545,7 @@
   padding: 25px;
   cursor: pointer;
   transition: all 0.35s ease;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 /* HOVER STYLE */
@@ -577,4 +578,3 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
