@@ -1,7 +1,11 @@
 import React, { createContext } from "react";
 import { io, Socket } from "socket.io-client";
 
-const socket = io(process.env.REACT_APP_API_URL as string, {
+// const socket = io(process.env.REACT_APP_API_URL as string, {
+//     withCredentials: true,
+// });
+
+const socket = io("http://187.124.68.70:3004", {
     withCredentials: true,
 });
 
