@@ -108,17 +108,19 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
         memberNick: memberNick,
         memberPassword: memberPassword,
       };
+
       const member = new MemberService();
       const result = await member.login(loginInput);
 
       // Saving Authenticated user
+      setAuthMember(result);
       handleLoginClose();
     } catch (err) {
       console.log(err);
       handleLoginClose();
       sweetErrorHandling(err).then();
     }
-  }
+  };
 
   return (
     <div>
