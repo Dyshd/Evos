@@ -66,7 +66,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 Yordam
               </NavLink>
             </Box>
-            <div style={{ background: "#343434" , borderRadius: "10px"}}>
+            {/* <div style={{ background: "#343434" , borderRadius: "10px"}}> */}
               <Basket
                 cartItems={cartItems}
                 onAdd={onAdd}
@@ -74,7 +74,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 onDelete={onDelete}
                 onDeleteAll={onDeleteAll}
               />
-            </div>
+            {/* </div> */}
 
 
             {!authMember ? (

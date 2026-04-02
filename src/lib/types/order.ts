@@ -16,7 +16,7 @@ export interface OrderItem {
     orderId: string;
     productId: string;
     createdAt: Date;
-    updateAt: Date;
+    updatedAt: Date;
 }
 export interface Order {
     _id: string

@@ -1,446 +1,884 @@
-.home-navbar {
-  width: 100%;
-  height: 773px;
-  display: flex;
-  /* background: url("/public/img/banner.webp"); */
-  background: rgb(3, 137, 3);
-  background-size: cover;
-}
-.home-navbar .navbar-container {
-  margin-top: 55px;
-  height: 500px;
+/* 
+  ========================================
+  1. GENERAL SETUP & VARIABLES
+  ========================================
+*/
+@import url("https://fonts.googleapis.com");
+
+:root {
+  --primary-green: #2ecc71;
+  --dark-green: #27ae60;
+  --accent-red: #e30d0d;
+  --text-white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* 
+  ========================================
+  2. HOME NAVBAR SECTION
+  ========================================
+*/
+.home-navbar {
+  width: 100%;
+  min-height: 773px;
+  display: flex;
+  justify-content: center;
+  /* background: url("/public/img/banner.webp"); */
+  background:
+    linear-gradient(135deg, rgba(3, 137, 3, 0.9), rgba(2, 80, 2, 0.95)),
+    url("/public/img/banner.webp") center/cover no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.home-navbar .navbar-container {
+  width: 90%;
+  max-width: 1200px;
+  /* margin-top: 55px; */
+}
+
+/* Menu & Navigation */
 .home-navbar .navbar-container .menu {
-  height: 50px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: -30px;
-  padding-bottom: 40px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .home-navbar .navbar-container .menu .brand-logo {
-  width: 110px;
-  height: 48px;
-  margin-left: 30px;
+  width: 120px;
+  height: auto;
+  transition: var(--transition);
+}
+
+.home-navbar .navbar-container .menu .brand-logo:hover {
+  transform: scale(1.05);
 }
 
 .home-navbar .navbar-container .menu .links {
-  min-width: 700px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-right: 30px;
+  gap: 35px;
 }
 
-.home-navbar .navbar-container .menu .links .login-button {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  appearance: none;
-  background: linear-gradient(90deg, #000000, #1a1a1a);
-  color: #e30d0d;
-  z-index: 1;
-  font-size: 16px;        /* kichik font */
-  font-weight: 600;
-  letter-spacing: -0.1px;
-  text-align: center;
-  outline: none;
-  border: none;
-  padding: 8px 16px;      /* kichik padding */
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-/* Hover effekti: ko‘tarilish + shadow */
-.home-navbar .navbar-container .menu .links .login-button:hover {
-  transform: translateY(-3px);                  /* kamroq ko‘tarilish */
-  box-shadow: 0 6px 18px rgba(227, 13, 13, 0.6);
-  color: #fff;
-  background: linear-gradient(90deg, #e30d0d, #ff5555);
-}
-
-/* Wave / flash effekti */
-.home-navbar .navbar-container .menu .links .login-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: rgba(227, 13, 13, 0.2);
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  z-index: 0;
-}
-
-.home-navbar .navbar-container .menu .links .login-button:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-/* Text glow */
-.home-navbar .navbar-container .menu .links .login-button span {
-  position: relative;
-  z-index: 2;
-  transition: text-shadow 0.3s ease;
-}
-
-.home-navbar .navbar-container .menu .links .login-button:hover span {
-  text-shadow: 0 0 8px #fff, 0 0 16px #e30d0d, 0 0 24px #ff5555;
-}
-
-
-.home-navbar .navbar-container .menu .user {
-  width: 50px;
-  height: 50px;
-  border-radius: 24px;
-}
+/* Link Hover Lines */
 .home-navbar a {
   text-decoration: none;
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 16px;
+  transition: var(--transition);
 }
 
-.home-navbar .hover-line a {
-  color: white;
-  z-index: 100;
-}
-.home-navbar .underline {
-  display: block;
-  content: "";
-  /* border-bottom: solid 2px green; */
+.home-navbar .hover-line {
+  position: relative;
+  padding: 5px 0;
 }
 
 .home-navbar .hover-line:after {
-  display: block;
   content: "";
-  border-bottom: solid 2px rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-white);
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out;
 }
 
 .home-navbar .hover-line:hover:after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
-.home-navbar div.hover-line:after {
-  transform-origin: 0% 50%;
+/* 
+  ========================================
+  3. BUTTONS (LOGIN & SIGNUP)
+  ========================================
+*/
+/* LOGIN TUGMASI - YANGI MODERN DIZAYN */
+.home-navbar .navbar-container .menu .links .login-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 28px;
+  background: rgba(255, 255, 255, 0.15); /* Shaffof oq fon */
+  backdrop-filter: blur(10px); /* Orqa fonni xiralashtirish (Glassmorphism) */
+  color: #ffffff; /* Matn rangi oq */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase; /* Harflarni katta qilish */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Nozik chegara */
+  border-radius: 50px; /* To'liq yumaloq shakl */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover effekti: Tugma oq rangga to'ladi */
+.home-navbar .navbar-container .menu .links .login-button:hover {
+  background: #ffffff; /* Fon butunlay oq bo'ladi */
+  color: #27ae60; /* Matn yashil bo'ladi (asosiy rangga mos) */
+  transform: translateY(-3px); /* Tepaga biroz ko'tariladi */
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+}
+
+/* Ichidagi yaltiroq effekt (Glow) */
+.home-navbar .navbar-container .menu .links .login-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.home-navbar .navbar-container .menu .links .login-button:hover::before {
+  left: 100%;
+}
+
+/* Bosgandagi effekt */
+.home-navbar .navbar-container .menu .links .login-button:active {
+  transform: scale(0.95);
+}
+
+/* Signup Button */
+.home-navbar .navbar-container .detail .signup .signup-button {
+  width: 220px;
+  height: 60px;
+  margin-top: 40px;
+  background: var(--primary-green);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);
+}
+
+.home-navbar .navbar-container .detail .signup .signup-button:hover {
+  background: var(--dark-green);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(46, 204, 113, 0.5);
+}
+
+/* 
+  ========================================
+  4. HEADER CONTENT (DETAIL & LOGO)
+  ========================================
+*/
 .home-navbar .navbar-container .header-frame {
-  margin-top: 142px;
-  height: 462px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .home-navbar .navbar-container .header-frame .detail {
-  width: 510px;
-  display: flex;
-  flex-direction: column;
+  width: 50%;
+  animation: fadeInLeft 1s ease-out;
 }
 
-.home-navbar .navbar-container .header-frame .detail .head-main-txt {
-  margin-top: -125px;
-  margin-left: 30px;
-  width: 450px;
-  height: 150px;
-  font-family: "Roboto Serif";
-  font-size: 34px;
-  font-style: normal;
+.head-main-txt {
+  font-family: "Roboto Serif", serif;
+  font-size: 54px;
   font-weight: 800;
-  line-height: 38px;
-  letter-spacing: -0.75px;
-  color: #fff;
+  line-height: 1.1;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.home-navbar .navbar-container .header-frame .detail .head-sharh {
-  width: 510px;
-  height: 42px;
-  margin-left: 30px;
-  font-family: "Roboto Serif";
-  font-size: 36px;
-  font-style: normal;
+.head-sharh {
+  font-family: "Roboto Serif", serif;
+  font-size: 38px;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.54px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
 }
 
-.home-navbar .navbar-container .header-frame .detail .service-txt {
-  margin-top: 40px;
-  width: 553px;
-  height: 23px;
-  margin-left: 30px;
-  font-family: "Roboto Serif";
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.3px;
-  color: #fff;
+.service-txt {
+  font-size: 20px;
+  color: #f0f0f0;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
-.home-navbar .navbar-container .detail .signup {
-  margin-top: 73px;
-}
-
-.home-navbar .navbar-container .detail .signup .signup-button {
-  width: 210px;
-  height: 60px;
-  margin-top: 50px;
-  margin-left: 30px;
-
-  background-color: #2ecc71;        /* asosiy yashil */
-  border: 2px solid #27ae60;        /* ozgina to‘qroq border */
-  border-radius: 6px;
-
-  color: white;
-  font-family: Poppins;
-  font-size: 17px;
-  font-weight: 500;
-
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
-/* Hover (faqat rang o‘zgaradi) */
-.home-navbar .navbar-container .detail .signup .signup-button:hover {
-  background-color: #25a65a;        /* biroz to‘qroq yashil */
-  border-color: #1e8449;            /* mos border */
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-
-
+/* Logo Image Floating Effect */
 .home-navbar .navbar-container .logo-frame {
-  margin-top: -130px;
-  width: 450px;   /* kerakli o'lchamni qo'ying */
-  height: 450px;
-  /* height: 470px; */
+  width: 480px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1s ease-out;
 }
 
 .home-navbar .navbar-container .logo-frame .logo-img {
   width: 100%;
   height: 100%;
   background: url("/public/img/evosfot.png") no-repeat center center;
-  background-size: cover; 
-  border-radius: 50px;
+  background-size: cover;
+  border-radius: 40px;
+  box-shadow: var(--shadow-lg);
+  animation: floating 4s ease-in-out infinite;
 }
 
-.other-navbar {
+/* 
+  ========================================
+  5. BASKET SECTION
+  ========================================
+*/
+/* .basket-frame {
+  margin: 50px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.basket-frame .all-check-box {
+  padding: 12px 20px;
+  width: 100%;
+  background: #f8f1e7;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #8d6e63;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+}
+
+.basket-info-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.basket-info-box:hover {
+  background: #fff;
+  transform: translateX(5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.basket-info-box .product-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.basket-info-box .product-name {
+  margin-left: 15px;
+  flex: 1;
+  font-weight: 600;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.basket-info-box .product-price {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent-red);
+}
+
+.basket-frame .cancel-btn {
+  font-size: 20px;
+  color: #ccc;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.basket-frame .cancel-btn:hover {
+  color: var(--accent-red);
+  transform: rotate(90deg);
+} */
+
+/* 
+========================================
+SHOPPING CARD (BASKET) - PREMIUM DESIGN
+========================================
+*/
+
+/* 1. SAVAT ICONKASI (Tepadagi qora qismi) */
+.basket-icon-container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2); /* Shaffofroq qora */
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-icon-container:hover {
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Savat ustidagi "1" raqami */
+.basket-icon-container .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #2ecc71;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  border: 2px solid #038903; /* Fon rangi bilan bir xil */
+}
+
+/* 2. ASOSIY SAVAT OYNASI (Cart Modal) */
+.basket-frame {
+  position: absolute;
+  top: 70px; /* Iconkadan pastroqda */
+  right: 0;
+  width: 380px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Savat tepasidagi kichik uchburchak (Arrow) */
+.basket-frame::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+
+/* 3. CART HEADER */
+.cart-header {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 4. MAHSULOT QATORI (Hot-Dog qismi) */
+.basket-info-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.basket-info-box:hover {
+  border-color: #2ecc71;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.basket-info-box .product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  color: #e30d0d;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.quantity {
+  color: #888;
+  font-size: 14px;
+}
+
+.user {
+  width: 50px;
+}
+/* 5. PLUS/MINUS TUGMALARI */
+.quantity-controls {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quantity-controls button {
+  padding: 2px 8px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.quantity-controls button:hover {
+  background: #f0f0f0;
+}
+
+/* 6. TOTAL VA ORDER TUGMASI */
+.cart-footer {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.order-button {
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-button:hover {
+  background: #222;
+  transform: scale(1.05);
+}
+
+/* O'chirish (X) tugmasi */
+.remove-item {
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-item:hover {
+  color: #e30d0d;
+}
+
+/* 
+  ========================================
+  6. OTHER NAVBAR (SECONDARY)
+  ========================================
+*/
+/* .other-navbar {
   width: 100%;
   height: 250px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/public/img/skrinshot.png") center/cover;
   display: flex;
-  background: url("/public/img/skrinshot.png");
-  background-size: cover;
+  justify-content: center;
+} */
+/* 
+  ========================================
+  OTHER NAVBAR - FULL REPAIR (TSX MOS)
+  ========================================
+*/
+
+/* 1. Asosiy fon va konteyner */
+/* 
+  ========================================
+  OTHER NAVBAR - HOME BILAN BIR XIL DIZAYN
+  ========================================
+*/
+
+/* 
+  ========================================
+  1. OTHER NAVBAR (FULL SYNC WITH HOME)
+  ========================================
+*/
+.other-navbar {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  /* Home Navbar bilan bir xil fon va gradient */
+  background:
+    linear-gradient(135deg, rgba(3, 137, 3, 0.95), rgba(2, 80, 2, 0.98)),
+    url("/public/img/banner.webp") center/cover no-repeat;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .other-navbar .navbar-container {
-  margin-top: 55px;
+  max-width: 1250px !important;
+  width: 95%;
+  margin: 0 auto;
 }
 
-.other-navbar .navbar-container .menu {
-  margin-top: -10px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+/* TSX'dagi Stack (menu) uchun: hamma narsani bir qatorga terish */
+.other-navbar .menu {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+  margin-top: 14px;
 }
 
-.other-navbar .navbar-container .menu .brand-logo {
-  width: 110px;
-  height: 48px;
+/* LOGOTIP - O'lchami va joylashuvi */
+.other-navbar .brand-logo {
+  width: 120px;
+  height: auto;
+  transition: var(--transition);
 }
 
-.other-navbar .navbar-container .menu .links {
-  min-width: 700px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+/* LINKLAR - Orasidagi masofa ideal 35px */
+.other-navbar .links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 35px !important;
+  margin-right: 50px;
 }
 
-.other-navbar .navbar-container .menu .links .login-button {
-  background: #3776cc;
-  color: #f8f8ff;
-}
-
-.other-navbar .navbar-container .menu .user {
-  width: 50px;
-  height: 50px;
-  border-radius: 24px;
-}
-.other-navbar a {
+.other-navbar .links a {
+  color: #ffffff !important;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s ease;
 }
 
-.other-navbar .hover-line a {
-  color: #f8f8ff;
-  z-index: 100;
-}
-.other-navbar .home-navbar .underline {
-  display: block;
-  content: "";
-  border-bottom: solid 2px #d7b686;
-}
-
+/* Underline Hover (Home bilan bir xil) */
 .other-navbar .hover-line:after {
-  display: block;
   content: "";
-  border-bottom: solid 2px #d7b686;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .other-navbar .hover-line:hover:after {
   transform: scaleX(1);
 }
 
-.other-navbar div.hover-line:after {
-  transform-origin: 0% 50%;
+/* 
+  ========================================
+  2. LOGIN BUTTON (PREMIUM GLASS STYLE)
+  ========================================
+*/
+.other-navbar .login-button {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px);
+  color: #ffffff !important;
+  padding: 10px 28px !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.4s ease !important;
 }
 
-/* BASKET */
+.other-navbar .login-button:hover {
+  background: #ffffff !important;
+  color: #27ae60 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3) !important;
+}
 
+/* 
+  ========================================
+  3. SHOPPING CART (BASKET) - TOZALANGAN VARIANT
+  ========================================
+*/
+
+/* Savat ikonkasining orqasidagi xunuk fonni olib tashladik */
+/* BASKET - ESKI HOLATIGA QAYTARILDI */
+
+/* 1. КОНТЕЙНЕР КОРЗИНЫ (MODAL) */
 .basket-frame {
-  position: relative;
-  padding: 10px 4px 0px 4px;
-  width: 450px;
-  height: auto;
+  position: absolute;
+  top: 34px; /* Расстояние от иконки */
+  right: -15px; /* Выравнивание по правому краю */
+  width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  background: #f8f8ff;
-  border-radius: 16px;
+  z-index: 9999;
+  padding: 0; /* Убираем внутренние отступы самого контейнера */
 }
 
+/* 2. ТРЕУГОЛЬНИК (ARROW) СВЕРХУ */
+.basket-frame::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 25px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #d7b586; /* Цвет должен совпадать с шапкой */
+}
+
+/* 3. ШАПКА КОРЗИНЫ (БЕЖЕВАЯ) */
 .basket-frame .all-check-box {
-  padding: 0px 6px;
-  width: 100%;
-  height: 35px;
+  background: #d7b586 !important;
+  padding: 12px 20px;
+  border-radius: 12px 12px 0 0;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  background: #d7b586;
-  border-width: 1px 0px;
-  border-style: solid;
-  border-color: #343434;
+  color: #333;
+  font-weight: 600;
 }
 
-.basket-frame .basket-info-box {
-  position: relative;
-  margin-top: 6px;
-  width: 100%;
-  height: auto;
+/* 4. КАРТОЧКА ТОВАРА ВНУТРИ КОРЗИНЫ */
+.basket-info-box {
+  margin: 10px;
+  padding: 10px 15px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 25px; /* Очень закругленные края как на фото */
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .basket-info-box .product-img {
-  width: 60px;
-  height: 60px;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 29px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .basket-info-box .product-name {
-  margin-left: 11px;
-  width: 185px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  color: #000000;
+  flex: 1;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
 }
 
 .basket-info-box .product-price {
-  width: 80px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 22px;
-  color: #ae0000;
-  margin-right: 10px;
+  color: #e30d0d;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: right;
+  margin-right: 15px;
+  margin-right: 20px;
 }
 
-.basket-info-box
-  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-  padding: 6.5px 14px;
-}
-
-.basket-info-box .css-ece9u5 {
-  min-width: 72px;
-}
-
-.basket-frame .cancel-btn {
-  position: absolute;
-  top: 33%;
-  right: 2%;
-  cursor: pointer;
-}
-
-.basket-frame .basket-order {
-  margin-top: 10px;
-  width: 100%;
-  height: 64px;
+/* 5. ФУТЕР КОРЗИНЫ (ИТОГО И КНОПКА) */
+.basket-frame .cart-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.basket-order .price {
-  width: 200px;
+.basket-frame .total-text {
+  font-weight: 700;
+  color: #e30d0d;
+}
+
+.basket-frame .order-button {
+  background: #000 !important;
+  color: #fff !important;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  text-transform: uppercase;
+  font-weight: 600;
   display: flex;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  color: #000000;
+  align-items: center;
+  gap: 8px;
 }
 
-.basket-frame .orders-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
+/* Кнопка удаления (X) */
+.cancel-btn {
+  cursor: pointer;
+  color: #999;
+  transition: 0.3s;
 }
 
-.basket-frame .orders-wrapper::-webkit-scrollbar {
-  width: 10px;
+.cancel-btn:hover {
+  color: #e30d0d;
 }
 
-.basket-frame .orders-wrapper::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
+/* User (Avatar) rasm */
+.other-navbar .user {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.basket-frame .orders-wrapper::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.other-navbar .user:hover {
+  transform: scale(1.1);
 }
 
-.basket-frame .orders-main-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin-top: 10px;
-  width: 100%;
-  height: 260px;
-  display: flex;
-  flex-direction: column;
+/* 
+  ========================================
+  RESPONSIVE (MOBILDA HAM BUZILMAYDI)
+  ========================================
+*/
+@media (max-width: 1024px) {
+  .other-navbar .links {
+    gap: 15px !important;
+  }
+  .other-navbar .links a {
+    font-size: 14px;
+  }
+}
+
+/* 
+  ========================================
+  7. ANIMATIONS
+  ========================================
+*/
+@keyframes floating {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+  .home-navbar .navbar-container .header-frame {
+    flex-direction: column;
+    text-align: center;
+  }
+  .home-navbar .navbar-container .header-frame .detail {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .service-txt {
+    margin: 0 auto 30px;
+  }
+  .home-navbar .navbar-container .logo-frame {
+    width: 350px;
+    height: 350px;
+  }
 }
