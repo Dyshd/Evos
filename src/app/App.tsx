@@ -27,8 +27,8 @@ function App() {
   const { setAuthMember } = useGlobals();
 
   // FACE ID HOLATLARI
-  const [isAuthorized, setIsAuthorized] = useState(true);
-  const [faceIdBypassed, setFaceIdBypassed] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [faceIdBypassed, setFaceIdBypassed] = useState(true);
 
   const [signupOpen, setSignupOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);

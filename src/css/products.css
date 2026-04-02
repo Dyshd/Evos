@@ -16,7 +16,7 @@
 }
 
 .products-page .products .avatar-big-box {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   position: relative;
   width: 100%;
   height: auto;
@@ -34,6 +34,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 176px;
 }
 .products-page .products .avatar-big-box .top-content .text {
   color: #343434;
@@ -78,11 +79,11 @@
   padding: 10px 15px;
   font-size: 14px;
   font-weight: bold;
-  color: #d7b586;
+  color: #fff;
   font-family: "Quicksand";
   border: none;
   border-radius: 18.5px;
-  background: #343434;
+  background: #000000;
   cursor: pointer;
 }
 .products-page .products .dishes-filter-section {
@@ -129,7 +130,7 @@
   flex-direction: row;
   align-items: flex-start;
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   top: 150px;
 }
 .list-category-section {
@@ -169,7 +170,7 @@
   align-items: center;
   gap: 15px; /* buttonlar orasini ochadi */
   margin-left: 960px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .products-page
@@ -197,7 +198,7 @@
   width: 273px;
   height: 320px;
   position: relative !important;
-  z-index: 9999999;
+  z-index: 999;
 }
 /* *  uzgartirgan joyim*
 .products-page .products .product-card .product-img {
@@ -270,12 +271,16 @@
 }
 .product-card .product-sale {
   position: absolute;
-  z-index: 99999999;
+  z-index: 99;
   background-color: #f19737;
   border-radius: 20px;
   padding: 5px;
   color: white;
   margin-top: 8px;
+}
+.basket-order {
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 .product-title {
   color: #343434;
